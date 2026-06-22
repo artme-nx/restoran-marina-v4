@@ -559,7 +559,7 @@ section{position:relative}
   let lenis=null;
   function initLenis(){
     if(reduce || !window.Lenis) { if(window.ScrollTrigger) ScrollTrigger.refresh(); return; }
-    lenis = new Lenis({ duration:1.2, easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)), smoothWheel:true });
+    lenis = new Lenis({lerp:0.2, wheelMultiplier:1, smoothWheel:true, syncTouch:false});
     if(window.gsap){
       gsap.ticker.add(t=>lenis.raf(t*1000));
       gsap.ticker.lagSmoothing(0);
